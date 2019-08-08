@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    image: users2010/promethee-web:1.0
+    container_name: 'promethee-webserver'
+    networks:
+      - promethee
+    ports:
+    - "8080:80"
+    volumes:
+      - repo:/var/www/html
+  promethee:
+    image: users2010/promethee:1.2
+    stdin_open: true
+    tty: true
+    entrypoint:
+      - '/bin/bash'
+    networks:
+      - promethee
+    volumes:
+      - repo:/usr/promethee/data
+      
+volumes:
+  repo:
+
+networks:
+  promethee:
