@@ -1,2 +1,5 @@
 # Docker-composes
-Docker-compose conteiners modo interativo
+Docker-compose containers modo interativo
+
+docker-compose up
+docker-compose down # para e matar todos containers
